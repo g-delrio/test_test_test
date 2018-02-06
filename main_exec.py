@@ -23,24 +23,6 @@ class MainExec:
 
         self.board.setup()
 
-    def play(self):
-        """
-        Main function of the game. While the game is not over, the player whose turn it is makes a ply.
-        When the game is over, it exits.
-        :return: 0
-        """
-        last_turn = None
-        game_over = False
-
-        while not game_over:
-            # Set whose turn it is
-            if last_turn == 'Black' or last_turn is None:
-                turn = 'White'
-            else:
-                turn = 'Black'
-            self.ply(turn=turn)
-        return 0
-
     def ply(self, turn):
         """
         Processes a move of a player. After the move is made, it assesses if its legal (when in check).
@@ -56,7 +38,7 @@ class MainExec:
 
     def move(self, turn):
         old_position = self.board.board
-        print('{}: Enter a move\n'+20*'-')
+
         player_move = input()
         # Assess the move. Get the square of origin and the piece associated.
 

@@ -113,8 +113,6 @@ class Board:
                                                                              rank=num_rank)
             num_file += 1
 
-        self.update()
-
     def update(self, old_position, new_position):
         """
         Updates the position on the board after a move is made
